@@ -66,9 +66,17 @@ function handleSweep(x, y) {
 		for (let i = 0; i < nbOfMines; i++) {
 			let rX = Math.floor(Math.random() * mapSize);
 			let rY = Math.floor(Math.random() * mapSize);
-			while (map[rX][rY].type === "m" || map[rX][rY].shown) {
+			while (map[rX][rY].type === "m" || map[rX][rY].shown || ((rX + 1 < mapSize && map[rX + 1][rY].shown)
+				|| (rX - 1 >= 0 && map[rX - 1][rY].shown)
+				|| (rY + 1 < mapSize && map[rX][rY + 1].shown)
+				|| (rY - 1 >= 0 && map[rX][rY - 1].shown)
+				|| (rX - 1 >= 0 && rY - 1 >= 0 && map[rX - 1][rY - 1].shown)
+				|| (rX + 1 < mapSize && rY + 1 < mapSize && map[rX + 1][rY + 1].shown)
+				|| (rX + 1 < mapSize && rY - 1 >= 0 && map[rX + 1][rY - 1].shown)
+				|| (rX - 1 >= 0 && rY + 1 < mapSize && map[rX - 1][rY + 1].shown))) {
 				rX = Math.floor(Math.random() * mapSize);
 				rY = Math.floor(Math.random() * mapSize);
+
 			}
 
 			map[rX][rY].type = "m";
