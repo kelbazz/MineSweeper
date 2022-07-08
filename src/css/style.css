@@ -69,12 +69,45 @@ button {
     font-family: "Staatliches";
 }
 
+.ms-htp {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	width: 500px;
+	height: 300px;
+
+	flex-direction: column;
+
+	background-color: #ffffff;
+
+	overflow: auto;
+}
+
+.ms-htp > div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	
+	margin-bottom: 2px;
+}
+
+.ms-htp > div > p {
+	width: fit-content;
+}
+
+.ms-htp > div > img {
+	height: 100px;
+}
+
 .tile {
     width: 20px;
     height: 20px;
 
-    border: #000000 solid 2px;
-    background-color: #dfcee0;
+    border: #8bcc7d solid 2px;
+    background-color: #adf59e;
     font-family: 'Courier New', Courier, monospace;
 
     background-position: center;
@@ -103,8 +136,8 @@ button {
 /* tile type */
 
 .tile-0 {
-    background-color: #ffffff;
-    border-color: #C3C3C3;
+    background-color: #e2c080;
+    border-color: #c7a973;
 }
 .tile-1 {
 	background-color: #ffffff;

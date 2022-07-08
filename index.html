@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mine Sweeper</title>
-    <link rel="stylesheet" href="src/css/style.css">
-    
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Mine Sweeper</title>
+	<link rel="stylesheet" href="src/css/style.css">
+
 	<link rel="apple-touch-icon" sizes="57x57" href="src/favicon/apple-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="src/favicon/apple-icon-60x60.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="src/favicon/apple-icon-72x72.png">
@@ -17,7 +17,7 @@
 	<link rel="apple-touch-icon" sizes="144x144" href="src/favicon/apple-icon-144x144.png">
 	<link rel="apple-touch-icon" sizes="152x152" href="src/favicon/apple-icon-152x152.png">
 	<link rel="apple-touch-icon" sizes="180x180" href="src/favicon/apple-icon-180x180.png">
-	<link rel="icon" type="image/png" sizes="192x192"  href="src/favicon/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="192x192" href="src/favicon/android-icon-192x192.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="src/favicon/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="96x96" href="src/favicon/favicon-96x96.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="src/favicon/favicon-16x16.png">
@@ -28,20 +28,49 @@
 </head>
 
 <body>
-    <script defer src="src/js/app.js"></script>
-    <div class="root">
-        <img class="ms-logo" src="src/assets/logo.png" alt="MineSweeper logo">
-        <div class="ms-stats">
-            <span class="bordered">Map Size: <input type="number" class="ms-map-size" value="10" min="3" max="25"></span>
-            <span class="bordered">Mines: <span class="ms-mines"></span></span>
-            <span class="bordered">Flag(s) left: <span class="ms-flags"></span></span>
-        </div>
-        <div class="ms-container"></div>
-        <div class="ms-ctrl">
-            <button onclick="init()">Restart</button>
-            <button onclick="gameOver()">Reveal</button>
-        </div>
-    </div>
+	<script defer src="src/js/app.js"></script>
+	<div class="ms-htp bordered" style="display: none;">
+		<h2>How to play MineSweeper ?</h2>
+
+		<div>
+			<p>
+				Click the tiles to show their values.
+				The value means the number of mines that
+				there is in the eight tiles around this tile.
+			</p>
+			<img src="src/assets/illustration_1.png">
+		</div>
+		<div>
+			<p>
+				If you think a tile is trapped, right click
+				(or long click) the tile to put a flag on it.
+			</p>
+			<img src="src/assets/illustration_2.png">
+		</div>
+		<div>
+			<p>
+				If you dug all the safe tile, you win. But if
+				you dig on a single mine, you lose.
+			</p>
+			<img src="src/assets/illustration_3.png">
+		</div>
+		<button onclick="toggleHowToPlay()">Close</button>
+	</div>
+	<div class="root">
+		<img class="ms-logo" src="src/assets/logo.png" alt="MineSweeper logo">
+		<div class="ms-stats">
+			<span class="bordered">Map Size: <input type="number" class="ms-map-size" value="10" min="3" max="25"></span>
+			<span class="bordered">Mines: <span class="ms-mines"></span></span>
+			<span class="bordered">Flag(s) left: <span class="ms-flags"></span></span>
+		</div>
+		<div class="ms-container"></div>
+		<div class="ms-ctrl">
+			<button onclick="init()">Restart</button>
+			<button onclick="gameOver()">Reveal</button>
+			<button onclick="switchCursor()">Switch cursor</button>
+			<button onclick="toggleHowToPlay()">How to play ?</button>
+		</div>
+	</div>
 </body>
 
 </html>

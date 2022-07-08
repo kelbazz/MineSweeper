@@ -35,6 +35,23 @@ function gameOver(win = false) {
     }
 }
 
+function switchCursor() {
+	if (!container.style.cursor) {
+		container.style.cursor = "url('src/assets/cursor.png'), default";
+	} else {
+		container.style.cursor = "";
+	}
+}
+
+function toggleHowToPlay() {
+	const panel = document.querySelector(".ms-htp");
+	if (panel.style.display === "none") {
+		panel.style.display = "flex";
+	} else {
+		panel.style.display = "none";
+	}
+}
+
 function handleSweep(x, y) {
     if (map[x][y].flagged) return;
 
