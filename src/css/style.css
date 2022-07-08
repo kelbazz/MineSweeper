@@ -33,6 +33,8 @@ body, .root {
     flex-direction: row;
 }
 .ms-container {
+	cursor: url("../assets/shovel.png") 10 35, crosshair;
+
     width: fit-content;
     height: fit-content;
     
