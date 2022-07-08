@@ -1,14 +1,10 @@
-// const ws = new WebSocket("ws://localhost:8080");
 const root = document.querySelector(".root");
 const container = document.querySelector(".ms-container");
 
-// ws.addEventListener("open", () => {
-//   ws.send("Hello, World!");
-//   // root.innerHTML = "<h1>Sent !</h1>";
-// });
 const map = [];
-
 let mapSize, nbOfMines, nbOfFlags;
+
+window.addEventListener("contextmenu", (e) => e.preventDefault())
 
 function handleFlag(x, y) {
     const { tile } = map[x][y];

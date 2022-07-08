@@ -6,6 +6,7 @@
 }
 
 body, .root {
+    cursor: url("../assets/cursor.png"), default;
     background-color: #ffffff;
 
     height: 100vh;
