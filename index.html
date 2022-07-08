@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mine Sweeper</title>
+    <link rel="stylesheet" href="src/css/style.css">
+</head>
+
+<body>
+    <script defer src="src/js/app.js"></script>
+    <div class="root">
+        <img class="ms-logo" src="src/assets/logo.png" alt="MineSweeper logo">
+        <div class="ms-stats">
+            <span class="bordered">Map Size: <input type="number" class="ms-map-size" value="10" min="3" max="25"></span>
+            <span class="bordered">Mines: <span class="ms-mines"></span></span>
+            <span class="bordered">Flag(s) left: <span class="ms-flags"></span></span>
+        </div>
+        <div class="ms-container"></div>
+        <div class="ms-ctrl">
+            <button onclick="init()">Restart</button>
+            <button onclick="gameOver()">Reveal</button>
+        </div>
+    </div>
+</body>
+
+</html>
